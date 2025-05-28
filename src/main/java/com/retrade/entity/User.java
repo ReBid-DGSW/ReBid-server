@@ -20,72 +20,73 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class User implements UserDetails {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @Column(unique = true, nullable = false)
     private String email;
-    
+
     @Column(nullable = false)
     private String name;
-    
+
     @Column(nullable = false)
     private String password;
-    
+
     private String avatar;
-    
+
     @Enumerated(EnumType.STRING)
     @Builder.Default
     private Role role = Role.USER;
-    
+
     @Builder.Default
     private Boolean enabled = true;
-    
+
     @Builder.Default
     private Boolean accountNonExpired = true;
-    
+
     @Builder.Default
     private Boolean accountNonLocked = true;
-    
+
     @Builder.Default
     private Boolean credentialsNonExpired = true;
-    
+
     @Builder.Default
     private Double rating = 0.0;
-    
+
     @Builder.Default
     private Integer salesCount = 0;
-    
+
     @Builder.Default
     private Boolean agreeTerms = false;
-    
+
     @Builder.Default
     private Boolean agreePrivacy = false;
-    
+
     @Builder.Default
     private Boolean agreeMarketing = false;
-    
+
     @Column(name = "created_at")
     @Builder.Default
     private LocalDateTime createdAt = LocalDateTime.now();
-    
+
     @Column(name = "updated_at")
     @Builder.Default
     private LocalDateTime updatedAt = LocalDateTime.now();
-    
+
     @OneToMany(mappedBy = "seller", cascade = CascadeType.ALL)
     private List<Auction> auctions;
-    
+
     @OneToMany(mappedBy = "seller", cascade = CascadeType.ALL)
     private List<Product> products;
-    
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Bid> bids;
-    
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<ProductLike> productLikes;
+
+    // 주석 처리 또는 임시 제거: Bid, ProductLike 클래스가 없어서 에러 발생
+    // @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    // private List<Bid> bids;
+
+    // @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    // private List<ProductLike> productLikes;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
