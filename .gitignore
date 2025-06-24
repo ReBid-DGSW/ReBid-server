@@ -1,13 +1,9 @@
 HELP.md
 .gradle
 build/
-.build/
-build/reports/problems
-build.gradle
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
-settings.gradle
 
 ### STS ###
 .apt_generated
@@ -29,7 +25,6 @@ bin/
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
-dodam-application/dodam-rest-api/src/main/resources/dodamdodam-firebase-key.json
 
 ### NetBeans ###
 /nbproject/private/
@@ -40,4 +35,6 @@ dodam-application/dodam-rest-api/src/main/resources/dodamdodam-firebase-key.json
 
 ### VS Code ###
 .vscode/
-*.DS_Store
+
+# Ignore application.properties file
+application.properties
