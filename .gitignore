@@ -2,9 +2,12 @@ HELP.md
 .gradle
 build/
 .build/
+build/reports/problems
+build.gradle
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
+settings.gradle
 
 ### STS ###
 .apt_generated
